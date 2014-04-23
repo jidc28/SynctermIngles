@@ -1,3 +1,6 @@
 class Sponsor < ActiveRecord::Base
-	belongs_to :user
+	has_one :user
+
+	#Validations of the model.
+	validates :user_id, :presence => true
 end

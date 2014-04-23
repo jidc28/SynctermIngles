@@ -6,5 +6,6 @@ class Administrator < ActiveRecord::Base
     has_many :receivers
     has_and_belongs_to_many :appointments
     
-    validates :user, :presence => true
+    #Validations of the model.
+    validates :user_id, :presence => true
 end

@@ -1,4 +1,5 @@
 SynctermIngles::Application.routes.draw do
+  get "welcome/index"
   resources :timetables
 
   resources :appointments

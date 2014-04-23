@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
   belongs_to :receiver
   belongs_to :provider
   belongs_to :sponsor
+
+  #Validations of the model.
+  validates :username, :presence => true
 end
