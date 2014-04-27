@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424214510) do
+ActiveRecord::Schema.define(version: 20140425191647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(version: 20140424214510) do
   create_table "diaries", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "iptables", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "min_bound",     limit: nil
+    t.string   "max_bound",     limit: nil
+    t.string   "coun_first",    limit: nil
+    t.string   "coun_name",     limit: nil
+    t.integer  "coun_code"
+    t.integer  "max_bound_int", limit: 8
+    t.integer  "min_bound_int", limit: 8
   end
 
   create_table "providers", force: true do |t|
@@ -88,6 +100,7 @@ ActiveRecord::Schema.define(version: 20140424214510) do
     t.string   "phone"
     t.string   "ip"
     t.string   "phone_code"
+    t.string   "count_registration"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

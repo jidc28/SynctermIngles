@@ -1,4 +1,6 @@
 SynctermIngles::Application.routes.draw do
+  resources :iptables
+
   resources :timezones
 
   get "welcome/index"

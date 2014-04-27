@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:username]
 
-  attr_accessor :username
 
   belongs_to :administrator
   belongs_to :receiver
@@ -20,4 +19,5 @@ class User < ActiveRecord::Base
             :phone,
             :email, :presence => true
   validates :terms_of_service, acceptance: true
+  validates :username, :uniqueness => true
 end
